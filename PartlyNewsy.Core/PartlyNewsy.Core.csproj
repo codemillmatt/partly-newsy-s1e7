@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.947036" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Refit" Version="4.8.14" />
+    <PackageReference Include="Microsoft.AppCenter.Auth" Version="2.5.0" />
+    <PackageReference Include="Microsoft.AppCenter.Data" Version="2.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Functions\PartlyNewsy.Models\PartlyNewsy.Models.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Pages\" />
+    <Folder Include="DataTemplateSelectors\" />
+    <Folder Include="Views\" />
+    <Folder Include="Converters\" />
+  </ItemGroup>
+</Project>
