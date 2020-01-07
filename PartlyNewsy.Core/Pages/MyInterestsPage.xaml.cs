@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-
 using System.Threading.Tasks;
-using System.Windows.Input;
 using Microsoft.AppCenter.Auth;
-using Microsoft.AppCenter.Data;
+
 using PartlyNewsy.Models;
-using Xamarin.Essentials;
 using Xamarin.Forms;
+using System.Linq;
+using Microsoft.AppCenter.Data;
 
 namespace PartlyNewsy.Core
 {
@@ -48,16 +45,57 @@ namespace PartlyNewsy.Core
 
         async Task CreateFavorite(NewsCategory newsCategory)
         {
-            await Data.CreateAsync<UserInterest>(newsCategory.CategoryName,
-                new UserInterest { NewsCategoryName = newsCategory.CategoryName },
+            await Data.CreateAsync<UserInterests>(newsCategory.CategoryName,
+                new UserInterests { NewsCategoryName = newsCategory.CategoryName },
                 DefaultPartitions.UserDocuments);
         }
 
         async Task DeleteFavorite(NewsCategory newsCategory)
         {
-            await Data.DeleteAsync<UserInterest>(
-                newsCategory.CategoryName, DefaultPartitions.UserDocuments
-            );
+            await Data.DeleteAsync<UserInterests>(
+                newsCategory.CategoryName, DefaultPartitions.UserDocuments);
+        }
+
+        async Task<List<NewsCategory>> GetUsersNewsCategories()
+        {
+            try
+            {
+                var loggedIn = authService.IsLoggedIn();
+
+                if (!loggedIn)
+                    return new List<NewsCategory>();
+
+                var dbResult = await Data.ListAsync<UserInterests>(
+                    DefaultPartitions.UserDocuments
+                );
+
+                var allNewsCats = new AllNewsCategories();
+                var userInterests = new List<UserInterests>();
+
+                userInterests.AddRange(dbResult.CurrentPage.Items.Select(i => i.DeserializedValue));
+
+                while (dbResult.HasNextPage)
+                {
+                    await dbResult.GetNextPageAsync();
+
+                    userInterests.AddRange(dbResult.CurrentPage.Items.Select(i => i.DeserializedValue));
+                }
+
+                foreach (var interest in userInterests)
+                {
+                    allNewsCats.First(c => c.CategoryName == interest.NewsCategoryName)
+                        .IsFavorite = true;
+                }
+
+                return allNewsCats;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+
+                return new List<NewsCategory>();
+            }
+
         }
 
         void SetCheckbox(NewsCategory selectedCategory)
@@ -90,52 +128,11 @@ namespace PartlyNewsy.Core
             var userFavorites = await GetUsersNewsCategories();
             
             AllNewsCategories = new List<NewsCategory>(userFavorites);
-                        
+
             newsCategories.ItemsSource = AllNewsCategories;
+            //newsCategories.ItemsSource = new AllNewsCategories();
         }
-
-        async Task<List<NewsCategory>> GetUsersNewsCategories()
-        {
-            try
-            {
-                var loggedIn = authService.IsLoggedIn();
-
-                if (!loggedIn)
-                    return new List<NewsCategory>();
-
-                var dbResult = await Data.ListAsync<UserInterest>(
-                    DefaultPartitions.UserDocuments);
-
-                var allNewsCats = new AllNewsCategories();
-
-                var userInterests = new List<UserInterest>();
-
-                // Get first page of results
-                userInterests.AddRange(dbResult.CurrentPage.Items.Select(i => i.DeserializedValue));
-
-                while (dbResult.HasNextPage)
-                {
-                    await dbResult.GetNextPageAsync();
-
-                    userInterests.AddRange(dbResult.CurrentPage.Items.Select(i => i.DeserializedValue));
-                }
-
-                foreach (var interest in userInterests)
-                {
-                    allNewsCats.First(c => c.CategoryName == interest.NewsCategoryName)
-                        .IsFavorite = true;
-                }
-
-                return allNewsCats;
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex);
-
-                return new List<NewsCategory>();
-            }
-        }
-
+        
         protected override async void OnAppearing()
         {
             base.OnAppearing();

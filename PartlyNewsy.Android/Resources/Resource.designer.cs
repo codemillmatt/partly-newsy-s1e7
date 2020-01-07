@@ -26,16 +26,29 @@ namespace PartlyNewsy.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Microsoft.AppCenter.Auth.Resource.Color.browser_actions_bg_grey = global::PartlyNewsy.Droid.Resource.Color.browser_actions_bg_grey;
+			global::Microsoft.AppCenter.Auth.Resource.Color.browser_actions_divider_color = global::PartlyNewsy.Droid.Resource.Color.browser_actions_divider_color;
+			global::Microsoft.AppCenter.Auth.Resource.Color.browser_actions_text_color = global::PartlyNewsy.Droid.Resource.Color.browser_actions_text_color;
+			global::Microsoft.AppCenter.Auth.Resource.Color.browser_actions_title_color = global::PartlyNewsy.Droid.Resource.Color.browser_actions_title_color;
+			global::Microsoft.AppCenter.Auth.Resource.Dimension.browser_actions_context_menu_max_width = global::PartlyNewsy.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
+			global::Microsoft.AppCenter.Auth.Resource.Dimension.browser_actions_context_menu_min_padding = global::PartlyNewsy.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
 			global::Microsoft.AppCenter.Auth.Resource.Dimension.http_auth_dialog_padding_bottom = global::PartlyNewsy.Droid.Resource.Dimension.http_auth_dialog_padding_bottom;
 			global::Microsoft.AppCenter.Auth.Resource.Dimension.http_auth_dialog_padding_left = global::PartlyNewsy.Droid.Resource.Dimension.http_auth_dialog_padding_left;
 			global::Microsoft.AppCenter.Auth.Resource.Dimension.http_auth_dialog_padding_right = global::PartlyNewsy.Droid.Resource.Dimension.http_auth_dialog_padding_right;
 			global::Microsoft.AppCenter.Auth.Resource.Dimension.http_auth_dialog_padding_top = global::PartlyNewsy.Droid.Resource.Dimension.http_auth_dialog_padding_top;
 			global::Microsoft.AppCenter.Auth.Resource.Id.LinearLayout1 = global::PartlyNewsy.Droid.Resource.Id.LinearLayout1;
+			global::Microsoft.AppCenter.Auth.Resource.Id.browser_actions_header_text = global::PartlyNewsy.Droid.Resource.Id.browser_actions_header_text;
+			global::Microsoft.AppCenter.Auth.Resource.Id.browser_actions_menu_item_icon = global::PartlyNewsy.Droid.Resource.Id.browser_actions_menu_item_icon;
+			global::Microsoft.AppCenter.Auth.Resource.Id.browser_actions_menu_item_text = global::PartlyNewsy.Droid.Resource.Id.browser_actions_menu_item_text;
+			global::Microsoft.AppCenter.Auth.Resource.Id.browser_actions_menu_items = global::PartlyNewsy.Droid.Resource.Id.browser_actions_menu_items;
+			global::Microsoft.AppCenter.Auth.Resource.Id.browser_actions_menu_view = global::PartlyNewsy.Droid.Resource.Id.browser_actions_menu_view;
 			global::Microsoft.AppCenter.Auth.Resource.Id.common_auth_webview = global::PartlyNewsy.Droid.Resource.Id.common_auth_webview;
 			global::Microsoft.AppCenter.Auth.Resource.Id.editPassword = global::PartlyNewsy.Droid.Resource.Id.editPassword;
 			global::Microsoft.AppCenter.Auth.Resource.Id.editUserName = global::PartlyNewsy.Droid.Resource.Id.editUserName;
 			global::Microsoft.AppCenter.Auth.Resource.Id.webview = global::PartlyNewsy.Droid.Resource.Id.webview;
 			global::Microsoft.AppCenter.Auth.Resource.Layout.activity_authentication = global::PartlyNewsy.Droid.Resource.Layout.activity_authentication;
+			global::Microsoft.AppCenter.Auth.Resource.Layout.browser_actions_context_menu_page = global::PartlyNewsy.Droid.Resource.Layout.browser_actions_context_menu_page;
+			global::Microsoft.AppCenter.Auth.Resource.Layout.browser_actions_context_menu_row = global::PartlyNewsy.Droid.Resource.Layout.browser_actions_context_menu_row;
 			global::Microsoft.AppCenter.Auth.Resource.Layout.common_activity_authentication = global::PartlyNewsy.Droid.Resource.Layout.common_activity_authentication;
 			global::Microsoft.AppCenter.Auth.Resource.Layout.http_auth_dialog = global::PartlyNewsy.Droid.Resource.Layout.http_auth_dialog;
 			global::Microsoft.AppCenter.Auth.Resource.Raw.msal_default_config = global::PartlyNewsy.Droid.Resource.Raw.msal_default_config;

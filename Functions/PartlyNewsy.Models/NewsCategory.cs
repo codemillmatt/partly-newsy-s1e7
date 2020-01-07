@@ -29,20 +29,47 @@ namespace PartlyNewsy.Models
         public AllNewsCategories()
         {
             AddRange(new NewsCategory[] {
-                new NewsCategory { CategoryName = "Business", DisplayName = "Business".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/business.jpg" },
-                new NewsCategory { CategoryName = "Entertainment", DisplayName = "Entertainment".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/entertainment.jpg" },
-                new NewsCategory { CategoryName = "Entertainment_MovieAndTV", DisplayName = "Movies and TV".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/movie.jpg" },
-                new NewsCategory { CategoryName = "Entertainment_Music", DisplayName = "Music".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/music.jpg" },
-                new NewsCategory { CategoryName = "Health", DisplayName = "Health".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/health.jpg" },
-                new NewsCategory { CategoryName = "Politics", DisplayName = "Politics".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/politics.jpg" },
-                new NewsCategory { CategoryName = "Products", DisplayName = "Products".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/toy.jpg" },
-                new NewsCategory { CategoryName = "ScienceAndTechnology", DisplayName = "Science and Tech".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/astronomy.jpg" },
-                new NewsCategory { CategoryName = "Technology", DisplayName = "Technology".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/technology.jpg" },
-                new NewsCategory { CategoryName = "Science", DisplayName = "Science".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/science.jpg" },
-                new NewsCategory { CategoryName = "Sports", DisplayName = "Sports".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/sports.jpg" },
-                new NewsCategory { CategoryName = "Sports_Golf", DisplayName = "Golf".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/golf.jpg" },
-                new NewsCategory { CategoryName = "Sports_MLB", DisplayName = "MLB", BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/baseball.jpg" },
-                new NewsCategory { CategoryName = "Sports_NBA", DisplayName = "NBA", BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/basketball.jpg" },
+                new NewsCategory { CategoryName = "Business", DisplayName = "Business".ToUpper(),
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/business.jpg" },
+
+                new NewsCategory { CategoryName = "Entertainment", DisplayName = "Entertainment".ToUpper(),
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/entertainment.jpg" },
+
+                new NewsCategory { CategoryName = "Entertainment_MovieAndTV", DisplayName = "Movies and TV".ToUpper(),
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/movie.jpg" },
+
+                new NewsCategory { CategoryName = "Entertainment_Music", DisplayName = "Music".ToUpper(),
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/music.jpg" },
+
+                new NewsCategory { CategoryName = "Health", DisplayName = "Health".ToUpper(),
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/health.jpg" },
+
+                new NewsCategory { CategoryName = "Politics", DisplayName = "Politics".ToUpper(),
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/politics.jpg" },
+
+                new NewsCategory { CategoryName = "Products", DisplayName = "Products".ToUpper(),
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/toy.jpg" },
+
+                new NewsCategory { CategoryName = "ScienceAndTechnology", DisplayName = "Science and Tech".ToUpper(),
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/astronomy.jpg" },
+
+                new NewsCategory { CategoryName = "Technology", DisplayName = "Technology".ToUpper(),
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/technology.jpg" },
+
+                new NewsCategory { CategoryName = "Science", DisplayName = "Science".ToUpper(),
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/science.jpg" },
+
+                new NewsCategory { CategoryName = "Sports", DisplayName = "Sports".ToUpper(),
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/sports.jpg" },
+
+                new NewsCategory { CategoryName = "Sports_Golf", DisplayName = "Golf".ToUpper(),
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/golf.jpg" },
+
+                new NewsCategory { CategoryName = "Sports_MLB", DisplayName = "MLB",
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/baseball.jpg" },
+
+                new NewsCategory { CategoryName = "Sports_NBA", DisplayName = "NBA",
+                    BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/basketball.jpg" },
                 new NewsCategory { CategoryName = "Sports_NFL", DisplayName = "NFL", BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/football.jpg" },
                 new NewsCategory { CategoryName = "Sports_NHL", DisplayName = "NHL", BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/hockey.jpg" },
                 new NewsCategory { CategoryName = "Sports_Soccer", DisplayName = "Soccer".ToUpper(), BackgroundImageUrl = "https://partlynewsyfunctionsstor.blob.core.windows.net/thumbnails/soccer.jpg" },
