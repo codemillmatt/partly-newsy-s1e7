@@ -39,5 +39,10 @@ namespace PartlyNewsy.Core
                 SetValue(BackgroundImageUrlProperty, value);
             }
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+
+        }
     }
 }

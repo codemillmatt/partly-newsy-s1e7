@@ -24,11 +24,19 @@ namespace PartlyNewsy.Core
         {
             return await newsFunctionAPI.GetTopNewsFromFunction();
         }
+
+        public async Task<List<Article>> GetNewsByCategory(string category)
+        {
+            return await newsFunctionAPI.GetNewsByCategory(category);
+        }
     }
 
     public interface INewsFunctionAPI
     {
         [Get("/GetTopNews")]
         Task<List<Article>> GetTopNewsFromFunction();
+
+        [Get("/GetNewsByCategory")]
+        Task<List<Article>> GetNewsByCategory([AliasAs("category")]string categoryName);
     }
 }

@@ -27,12 +27,12 @@ namespace PartlyNewsy.Core
 
         protected async void SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (!authService.IsLoggedIn())
-                return;
-
             if (!(e.CurrentSelection[0] is NewsCategory selectedCategory))
                 return;
 
+            if (!authService.IsLoggedIn())
+                return;
+            
             selectedCategory.IsFavorite = !selectedCategory.IsFavorite;
 
             SetCheckbox(selectedCategory);
@@ -48,12 +48,29 @@ namespace PartlyNewsy.Core
             await Data.CreateAsync<UserInterests>(newsCategory.CategoryName,
                 new UserInterests { NewsCategoryName = newsCategory.CategoryName },
                 DefaultPartitions.UserDocuments);
+
+            // THE BELOW ISN'T IN THE EPISODE AND IS BONUS CONTENT!!
+
+            // Tell the App Shell to add a new interest tab
+            var interestInfo = new InterestSubMessage
+            {
+                Category = newsCategory.CategoryName,
+                Title = newsCategory.DisplayName
+            };
+
+            var msg = new AddInterestTabMessage { InterestInfo = interestInfo };
+
+            MessagingCenter.Send(msg, AddInterestTabMessage.AddTabMessage);
         }
 
         async Task DeleteFavorite(NewsCategory newsCategory)
         {
             await Data.DeleteAsync<UserInterests>(
                 newsCategory.CategoryName, DefaultPartitions.UserDocuments);
+
+            var msg = new RemoveInterestTabMessage { InterestName = newsCategory.CategoryName };
+
+            MessagingCenter.Send(msg, RemoveInterestTabMessage.RemoveTabMessage);
         }
 
         async Task<List<NewsCategory>> GetUsersNewsCategories()
@@ -83,8 +100,19 @@ namespace PartlyNewsy.Core
 
                 foreach (var interest in userInterests)
                 {
-                    allNewsCats.First(c => c.CategoryName == interest.NewsCategoryName)
-                        .IsFavorite = true;
+                    var favoriteCategory = allNewsCats.First(c => c.CategoryName == interest.NewsCategoryName);
+                    favoriteCategory.IsFavorite = true;
+
+                    // add the tabs
+                    var interestInfo = new InterestSubMessage
+                    {
+                        Category = favoriteCategory.CategoryName,
+                        Title = favoriteCategory.DisplayName
+                    };
+
+                    var msg = new AddInterestTabMessage { InterestInfo = interestInfo };
+
+                    MessagingCenter.Send(msg, AddInterestTabMessage.AddTabMessage);
                 }
 
                 return allNewsCats;

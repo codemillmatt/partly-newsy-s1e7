@@ -33,9 +33,18 @@ namespace PartlyNewsy.Core
 
         async Task GetData()
         {
+            List<Article> articles = null;
+
             var svc = new NewsService();
 
-            var articles = await svc.GetTopNews();
+            if (string.IsNullOrEmpty(CategoryName))
+            {
+                articles = await svc.GetTopNews();
+            }
+            else
+            {
+                articles = await svc.GetNewsByCategory(CategoryName);
+            }
 
             newsList.ItemsSource = articles;
         }

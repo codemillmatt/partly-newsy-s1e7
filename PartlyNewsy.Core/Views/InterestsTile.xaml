@@ -23,7 +23,8 @@
 
         <Image Aspect="AspectFill"
                Grid.RowSpan="3"
-               Source="{Binding BackgroundImageUrl}" />
+               Source="{Binding BackgroundImageUrl}">
+        </Image>
 
         <BoxView BackgroundColor="#000000"
                  Opacity="0.5"

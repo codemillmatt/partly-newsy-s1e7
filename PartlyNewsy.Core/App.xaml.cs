@@ -23,11 +23,11 @@ namespace PartlyNewsy
         {
             // Handle when your app starts
             AppCenter.Start(
-                "android=b7857000-1ebc-4252-b73b-39db6ab680c2;" +
-                "ios=bd0701e6-b000-42e8-bf75-a390d2a2ee48;",
+                "android=;" +
+                "ios=;",
                 typeof(Auth), typeof(Data));
 
-            AppCenter.LogLevel = LogLevel.Verbose;
+            AppCenter.LogLevel = LogLevel.Verbose;            
         }
 
         protected override void OnSleep()
