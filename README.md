@@ -1,6 +1,6 @@
 Welcome back to Partly Cloudy! The show where you learn how to build a cloud-connected Xamarin mobile application. We start from nothing and don't quit until it's ready for the App Store!
 
-So go [download all the code for this episode on GitHub](https://aka.ms/partly-cloudy-s1e7-github)! (And if you haven't, [sign up for a free Azure account](https://azure.microsoft.com/en-us/free/?WT.mc_id=partlycloudy-github-masoucou), you'll need it to follow along.)
+So go [download all the code for this episode on GitHub](https://aka.ms/partly-cloudy-s1e7-github-masoucou)! (And if you haven't, [sign up for a free Azure account](https://azure.microsoft.com/en-us/free/?WT.mc_id=partlycloudy-github-masoucou), you'll need it to follow along.)
 
 # Episode 7 Recap - Ctrl+S (App Center Data)
 
