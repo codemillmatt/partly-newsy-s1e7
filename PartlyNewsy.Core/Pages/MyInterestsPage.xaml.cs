@@ -48,6 +48,7 @@ namespace PartlyNewsy.Core
             await Data.CreateAsync<UserInterests>(newsCategory.CategoryName,
                 new UserInterests { NewsCategoryName = newsCategory.CategoryName },
                 DefaultPartitions.UserDocuments);
+            
 
             // THE BELOW ISN'T IN THE EPISODE AND IS BONUS CONTENT!!
 
