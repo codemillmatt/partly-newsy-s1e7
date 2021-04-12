@@ -1,6 +1,6 @@
 Welcome back to Partly Cloudy! The show where you learn how to build a cloud-connected Xamarin mobile application. We start from nothing and don't quit until it's ready for the App Store!
 
-So go [download all the code for this episode on GitHub](https://aka.ms/partly-cloudy-s1e7-github-masoucou)! (And if you haven't, [sign up for a free Azure account](https://azure.microsoft.com/en-us/free/?WT.mc_id=partlycloudy-github-masoucou), you'll need it to follow along.)
+So go [download all the code for this episode on GitHub](https://aka.ms/partly-cloudy-s1e7-github-masoucou)! (And if you haven't, [sign up for a free Azure account](https://azure.microsoft.com/free/?WT.mc_id=mobile-0000-masoucou), you'll need it to follow along.)
 
 # Episode 7 Recap - Ctrl+S (App Center Data)
 
@@ -47,7 +47,7 @@ The other thing I did was setup an Azure Cosmos DB instance.
 
 Now this step is optional, but I like to have total control, so I went ahead and did it myself.
 
-Here are some [docs on how to set one up](https://docs.microsoft.com/en-us/azure/cosmos-db/create-cosmosdb-resources-portal?WT.mc_id=partlycloudy-github-masoucou).
+Here are some [docs on how to set one up](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal?WT.mc_id=mobile-0000-masoucou).
 
 While you're doing that you can call your database anything you'd like - I called my `user-preferences`.
 
@@ -63,7 +63,7 @@ One of the App Center Mobile Backend as a Service (MBaaS) features is just about
 
 App Center MBaaS provides slick, easy to use APIs for Auth and Push. And App Center Data is no exception.
 
-In addition to all the [great features of Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction?WT.mc_id=partlycloudy-github-masoucou#key-benefits) - such as world-wide replication, instant scaling, and generally just a fast, fast, fast database - App Center Data puts a nice abstraction over the Cosmos API to make things pretty easy to work with.
+In addition to all the [great features of Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction?WT.mc_id=mobile-0000-masoucou#key-benefits) - such as world-wide replication, instant scaling, and generally just a fast, fast, fast database - App Center Data puts a nice abstraction over the Cosmos API to make things pretty easy to work with.
 
 App Center data also gives you the ability to work with data offline and then performs the sync back to Cosmos when the user goes back online - all without you having to worry about it.
 
@@ -93,7 +93,7 @@ Click on the data menu from the left-hand menu, and you'll be presented with a s
 
 ![First screen in connecting app center to cosmos db](https://res.cloudinary.com/code-mill-technologies-inc/image/upload/bo_0px_solid_rgb:000000,c_scale,e_shadow:40,h_600/v1578501751/Capture-CosmosConnect_bzxyp9.jpg)
 
-Then it'll walk you through either connecting to an existing Cosmos DB account or create a new one for you. [The directions here will help you out](https://docs.microsoft.com/en-us/appcenter/data/getting-started?WT.mc_id=partlycloudy-github-masoucou).
+Then it'll walk you through either connecting to an existing Cosmos DB account or create a new one for you. [The directions here will help you out](https://docs.microsoft.com/appcenter/data/getting-started?WT.mc_id=mobile-0000-masoucou).
 
 Once there, you're good to go.
 
@@ -121,9 +121,9 @@ await Data.CreateAsync<UserInterests>(newsCategory.CategoryName,
 
 Assuming the user is signed-in, that `DefaultPartitions.UserDocuments` will make sure it gets saved in their personal Cosmos DB partition that only they can access!
 
-There's also a `ReplaceAsync` function for [pdating a document](https://docs.microsoft.com/appcenter/sdk/data/xamarin?WT.mc_id=partlycloudy-github-masoucou#replace-upsert-a-document)
+There's also a `ReplaceAsync` function for [pdating a document](https://docs.microsoft.com/appcenter/sdk/data/xamarin?WT.mc_id=mobile-0000-masoucou#replace-upsert-a-document)
 
-And of course - a `DeleteAsync` function for [deleting](https://docs.microsoft.com/appcenter/sdk/data/xamarin?WT.mc_id=partlycloudy-github-masoucou#delete-a-document).
+And of course - a `DeleteAsync` function for [deleting](https://docs.microsoft.com/appcenter/sdk/data/xamarin?WT.mc_id=mobile-0000-masoucou#delete-a-document).
 
 ### Reading Data
 
@@ -158,7 +158,7 @@ while (dbResult.HasNextPage)
 }
 ```
 
-Here's more info on reading a [single document of data](https://docs.microsoft.com/appcenter/sdk/data/xamarin?WT.mc_id=partlycloudy-github-masoucou#reading-a-document), and then some on [reading lists of data](https://docs.microsoft.com/appcenter/sdk/data/xamarin?WT.mc_id=partlycloudy-github-masoucou#fetching-a-list-of-documents).
+Here's more info on reading a [single document of data](https://docs.microsoft.com/appcenter/sdk/data/xamarin?WT.mc_id=mobile-0000-masoucou#reading-a-document), and then some on [reading lists of data](https://docs.microsoft.com/appcenter/sdk/data/xamarin?WT.mc_id=mobile-0000-masoucou#fetching-a-list-of-documents).
 
 So those APIs aren't too bad. Especially considering that the power that they give you with offline and security.
 
